@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="ko">
 
@@ -231,6 +231,32 @@
 
             stroke-width: 2.2;
 
+        }
+
+        .home-brand-btn {
+            border: none;
+            color: white;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .home-brand-btn:active {
+            transform: scale(0.96);
+        }
+
+        body.prayer-mode #record-status-wrap,
+        body.prayer-mode #attendance-content,
+        body.prayer-mode #save-indicator,
+        body.prayer-mode .save-bottom-actions {
+            display: none;
+        }
+
+        body.attendance-mode #prayer-section {
+            display: none !important;
+        }
+
+        body.prayer-mode #prayer-section {
+            display: block;
         }
 
 
@@ -2710,7 +2736,9 @@
 
         <div class="brand-wrap">
 
-            <div class="brand-icon"><i data-lucide="book-open-check"></i></div>
+            <button class="brand-icon home-brand-btn" id="btn-home" type="button" title="홈으로">
+                <i data-lucide="book-open-check"></i>
+            </button>
 
             <div>
 
@@ -2812,7 +2840,7 @@
 
         <div class="prayer-help">
 
-            집회 때 반복해서 사용하는 기도명단입니다. 이름을 추가하거나 수정하면 현재 선택한 구역에 저장됩니다.
+            집회 때 반복해서 사용하는 기도명단입니다. 홈 버튼을 누르면 구역원 출석체크 화면으로 돌아갑니다.
 
         </div>
 
@@ -5036,16 +5064,28 @@
 
 
 
-    function openPrayerSection() {
+    function showAttendancePage() {
+        document.body.classList.remove('prayer-mode');
+        document.body.classList.add('attendance-mode');
 
         const section = document.getElementById('prayer-section');
+        if (section) section.classList.remove('show');
 
+        renderAttendanceGrid();
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function openPrayerSection() {
+        document.body.classList.remove('attendance-mode');
+        document.body.classList.add('prayer-mode');
+
+        const section = document.getElementById('prayer-section');
         section.classList.add('show');
 
         renderPrayerList();
 
-        setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
-
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
 
@@ -6679,6 +6719,8 @@
 
         elType.addEventListener('change', handleMeetingTypeChange);
 
+        document.getElementById('btn-home').addEventListener('click', showAttendancePage);
+
         document.querySelectorAll('.btn-setup').forEach(btn => btn.addEventListener('click', openSetup));
         document.getElementById('btn-template-download').addEventListener('click', downloadMemberTemplate);
         document.getElementById('btn-member-upload').addEventListener('click', () => triggerFilePicker('member-upload-input'));
@@ -6849,6 +6891,8 @@
 
         previousMeetingType = elType.value;
 
+        document.body.classList.add('attendance-mode');
+
         loadData();
 
         loadWorkingRecord();
@@ -6870,6 +6914,3 @@
 </body>
 
 </html>
-
-
-
