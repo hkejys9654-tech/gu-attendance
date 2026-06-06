@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="ko">
 
@@ -231,32 +231,6 @@
 
             stroke-width: 2.2;
 
-        }
-
-        .home-brand-btn {
-            border: none;
-            color: white;
-            cursor: pointer;
-            flex-shrink: 0;
-        }
-
-        .home-brand-btn:active {
-            transform: scale(0.96);
-        }
-
-        body.prayer-mode #record-status-wrap,
-        body.prayer-mode #attendance-content,
-        body.prayer-mode #save-indicator,
-        body.prayer-mode .save-bottom-actions {
-            display: none;
-        }
-
-        body.attendance-mode #prayer-section {
-            display: none !important;
-        }
-
-        body.prayer-mode #prayer-section {
-            display: block;
         }
 
 
@@ -1322,13 +1296,9 @@
 
 
         .modal-content {
-
             background-color: white;
-
             width: 90%;
-
             max-width: 500px;
-
             max-height: 85vh;
 
             border-radius: 18px;
@@ -1338,9 +1308,88 @@
             overflow-y: auto;
 
             box-shadow: 0 8px 30px rgba(0,0,0,0.22);
-
         }
 
+        .update-modal-content {
+            max-width: 440px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .update-hero {
+            padding: 28px 22px 24px;
+            color: white;
+            text-align: center;
+            background:
+                radial-gradient(circle at 85% 15%, rgba(255,255,255,0.22), transparent 28%),
+                linear-gradient(145deg, #063a91, #0b4fb3);
+        }
+
+        .update-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.17);
+            font-size: 0.74rem;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+
+        .update-hero h2 {
+            margin-top: 12px;
+            font-size: 1.38rem;
+            font-weight: 950;
+            letter-spacing: -0.7px;
+        }
+
+        .update-hero p {
+            margin-top: 7px;
+            font-size: 0.82rem;
+            line-height: 1.5;
+            opacity: 0.92;
+            font-weight: 750;
+        }
+
+        .update-body {
+            padding: 20px;
+        }
+
+        .update-item {
+            display: flex;
+            gap: 11px;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .update-item:last-of-type { border-bottom: none; }
+
+        .update-item-mark {
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            color: var(--primary);
+            background: var(--primary-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: 950;
+        }
+
+        .update-item-title {
+            color: var(--navy);
+            font-size: 0.92rem;
+            font-weight: 950;
+        }
+
+        .update-item-text {
+            margin-top: 3px;
+            color: #667789;
+            font-size: 0.78rem;
+            line-height: 1.45;
+            font-weight: 750;
+        }
 
 
         .modal-header {
@@ -1616,6 +1665,7 @@
             flex-shrink: 0;
 
             width: 36px;
+
             height: 36px;
 
             border-radius: 50%;
@@ -2405,75 +2455,42 @@
 
 
         .prayer-capture-root {
-
             position: fixed;
-
             top: -9999px;
-
             left: -9999px;
-
             z-index: -1;
-
-            width: 720px;
-
+            width: 540px;
             font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-
         }
-
-
 
         .prayer-capture-page {
-
-            width: 720px;
-
-            min-height: 1180px;
-
-            padding: 42px 38px 34px;
-
+            width: 540px;
+            min-height: 1080px;
+            padding: 32px 26px 28px;
             color: #26364d;
-
             background:
-
-                radial-gradient(circle at 92% 4%, rgba(74,144,226,0.18), transparent 28%),
-
+                radial-gradient(circle at 92% 4%, rgba(74,144,226,0.22), transparent 30%),
                 linear-gradient(160deg, #ffffff 0%, #f2f7ff 100%);
-
         }
-
-
 
         .pci-kicker {
-
             color: #4a78b7;
-
             text-align: center;
-
-            font-size: 18px;
-
+            font-size: 17px;
             font-weight: 850;
-
             letter-spacing: 2px;
-
         }
-
 
 
         .pci-title {
 
             color: var(--navy);
-
             text-align: center;
-
-            font-size: 34px;
-
+            font-size: 36px;
             font-weight: 950;
-
             letter-spacing: -1px;
-
-            margin-top: 7px;
-
+            margin-top: 8px;
         }
-
 
 
         .pci-meta {
@@ -2481,15 +2498,10 @@
             display: flex;
 
             justify-content: center;
-
-            gap: 10px;
-
+            gap: 8px;
             flex-wrap: wrap;
-
-            margin: 18px 0 24px;
-
+            margin: 17px 0 22px;
         }
-
 
 
         .pci-meta span {
@@ -2499,29 +2511,18 @@
             color: #46617f;
 
             border: 1px solid #d9e6f6;
-
             border-radius: 999px;
-
-            padding: 8px 15px;
-
-            font-size: 15px;
-
+            padding: 8px 12px;
+            font-size: 17px;
             font-weight: 850;
-
             box-shadow: 0 2px 7px rgba(35,73,122,0.07);
-
         }
-
 
 
         .pci-list {
-
             display: grid;
-
-            gap: 12px;
-
+            gap: 15px;
         }
-
 
 
         .pci-card {
@@ -2529,41 +2530,28 @@
             background: rgba(255,255,255,0.96);
 
             border: 1px solid #dbe6f3;
-
-            border-left: 7px solid var(--primary);
-
-            border-radius: 16px;
-
-            padding: 15px 17px;
-
-            box-shadow: 0 4px 12px rgba(27,58,107,0.07);
-
+            border-left: 8px solid var(--primary);
+            border-radius: 18px;
+            padding: 18px 18px 17px;
+            box-shadow: 0 5px 14px rgba(27,58,107,0.09);
         }
-
 
 
         .pci-card-top {
 
             display: flex;
-
             align-items: center;
-
-            gap: 10px;
-
-            padding-bottom: 10px;
-
+            gap: 11px;
+            padding-bottom: 13px;
             border-bottom: 1px solid #edf2f7;
-
+            flex-wrap: wrap;
         }
-
 
 
         .pci-number {
 
-            width: 30px;
-
-            height: 30px;
-
+            width: 38px;
+            height: 38px;
             border-radius: 50%;
 
             background: var(--primary);
@@ -2578,8 +2566,7 @@
 
             flex-shrink: 0;
 
-            font-size: 14px;
-
+            font-size: 19px;
             font-weight: 950;
 
         }
@@ -2590,8 +2577,7 @@
 
             color: var(--navy);
 
-            font-size: 23px;
-
+            font-size: 34px;
             font-weight: 950;
 
             letter-spacing: -0.4px;
@@ -2604,8 +2590,7 @@
 
             color: #7b8ba0;
 
-            font-size: 15px;
-
+            font-size: 21px;
             font-weight: 800;
 
         }
@@ -2615,13 +2600,9 @@
         .pci-status {
 
             margin-left: auto;
-
             border-radius: 999px;
-
-            padding: 6px 12px;
-
-            font-size: 14px;
-
+            padding: 7px 13px;
+            font-size: 20px;
             font-weight: 950;
 
             background: #eef2f7;
@@ -2643,39 +2624,28 @@
 
 
         .pci-details {
-
             display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 7px 18px;
-
-            margin-top: 10px;
-
+            grid-template-columns: 1fr;
+            gap: 9px;
+            margin-top: 14px;
         }
-
-
 
         .pci-detail {
-
             min-width: 0;
-
-            font-size: 14px;
-
-            line-height: 1.45;
-
+            font-size: 22px;
+            line-height: 1.5;
             color: #40536d;
-
             overflow-wrap: anywhere;
-
         }
 
-
-
-        .pci-detail.wide { grid-column: span 2; }
-
-        .pci-detail b { color: #7890ad; margin-right: 6px; font-size: 13px; }
-
+        .pci-detail.wide { grid-column: span 1; }
+        .pci-detail b {
+            display: inline-block;
+            min-width: 86px;
+            color: #7188a5;
+            margin-right: 7px;
+            font-size: 18px;
+        }
 
 
         .pci-footer {
@@ -2686,16 +2656,13 @@
 
             align-items: center;
 
-            margin-top: 22px;
-
-            padding-top: 13px;
-
+            margin-top: 24px;
+            padding-top: 15px;
             border-top: 1px solid #dce7f3;
 
             color: #7a8ca3;
 
-            font-size: 14px;
-
+            font-size: 18px;
             font-weight: 800;
 
         }
@@ -2736,9 +2703,7 @@
 
         <div class="brand-wrap">
 
-            <button class="brand-icon home-brand-btn" id="btn-home" type="button" title="홈으로">
-                <i data-lucide="book-open-check"></i>
-            </button>
+            <div class="brand-icon"><i data-lucide="book-open-check"></i></div>
 
             <div>
 
@@ -2840,7 +2805,7 @@
 
         <div class="prayer-help">
 
-            집회 때 반복해서 사용하는 기도명단입니다. 홈 버튼을 누르면 구역원 출석체크 화면으로 돌아갑니다.
+            집회 때 반복해서 사용하는 기도명단입니다. 이름을 추가하거나 수정하면 현재 선택한 구역에 저장됩니다.
 
         </div>
 
@@ -2886,23 +2851,48 @@
 
 
 <div class="bottom-tools">
-
     <button class="tool-btn btn-setup" type="button"><i data-lucide="users-round"></i>명단설정</button>
-
     <button class="tool-btn btn-prayer" type="button"><i data-lucide="clipboard-list"></i>기도명단</button>
-
     <button class="tool-btn btn-share" type="button"><i data-lucide="share-2"></i>공유하기</button>
-
     <button class="tool-btn btn-stats" type="button"><i data-lucide="bar-chart-3"></i>통계보기</button>
+</div>
 
+<div class="modal" id="update-modal">
+    <div class="modal-content update-modal-content">
+        <div class="update-hero">
+            <div class="update-badge">새로운 업데이트</div>
+            <h2>더 편하고 크게 개선됐어요</h2>
+            <p>기존 명단과 출석 기록은 그대로 유지됩니다.</p>
+        </div>
+        <div class="update-body">
+            <div class="update-item">
+                <div class="update-item-mark">1</div>
+                <div>
+                    <div class="update-item-title">모바일 엑셀 기능 개선</div>
+                    <div class="update-item-text">구역원·기도명단 업로드와 엑셀 서식·추출이 모바일에서도 동작합니다.</div>
+                </div>
+            </div>
+            <div class="update-item">
+                <div class="update-item-mark">2</div>
+                <div>
+                    <div class="update-item-title">기도명단 이미지 큰 글씨 적용</div>
+                    <div class="update-item-text">한 페이지에 3명씩 보기 좋게 나누고 이름과 상세 글자를 크게 키웠습니다.</div>
+                </div>
+            </div>
+            <div class="update-item">
+                <div class="update-item-mark">3</div>
+                <div>
+                    <div class="update-item-title">파일 저장·공유 안정화</div>
+                    <div class="update-item-text">휴대폰의 공유 및 파일 저장 화면을 활용하도록 개선했습니다.</div>
+                </div>
+            </div>
+            <button class="btn-save" id="btn-update-confirm" type="button" style="margin-top:14px;">업데이트 확인</button>
+        </div>
+    </div>
 </div>
 
 
-
-
-
 <div class="modal" id="setup-modal">
-
     <div class="modal-content">
 
         <div class="modal-header">
@@ -3090,8 +3080,7 @@
 
         </div>
 
-        <div class="help-text">글자가 작아지지 않도록 명단을 여러 장으로 자동 분할했습니다.</div>
-
+        <div class="help-text">어르신도 읽기 쉽도록 큰 글씨로 한 페이지에 3명씩 자동 분할했습니다.</div>
         <button class="btn-save" id="btn-download-prayer-images" type="button">전체 이미지 저장 / 공유</button>
 
         <div class="prayer-image-gallery" id="prayer-image-gallery"></div>
@@ -3125,11 +3114,10 @@
     const STORAGE_KEY_MEMBERS = 'guAttendance_members_v2';
 
     const STORAGE_KEY_RECORDS = 'guAttendance_records_v2';
-
     const STORAGE_KEY_LASTDISTRICT = 'guAttendance_lastDistrict';
-
     const STORAGE_KEY_PRAYERS = 'guPrayerList_v1';
-
+    const STORAGE_KEY_UPDATE_NOTICE = 'guAttendance_updateNotice';
+    const APP_VERSION = '2026.06.06-large-prayer-image';
 
 
     const CATEGORIES = {
@@ -5064,28 +5052,16 @@
 
 
 
-    function showAttendancePage() {
-        document.body.classList.remove('prayer-mode');
-        document.body.classList.add('attendance-mode');
-
-        const section = document.getElementById('prayer-section');
-        if (section) section.classList.remove('show');
-
-        renderAttendanceGrid();
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
     function openPrayerSection() {
-        document.body.classList.remove('attendance-mode');
-        document.body.classList.add('prayer-mode');
 
         const section = document.getElementById('prayer-section');
+
         section.classList.add('show');
 
         renderPrayerList();
 
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(() => section.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+
     }
 
 
@@ -5989,10 +5965,8 @@
 
         root.style.left = '0';
 
-        const pageSize = 6;
-
+        const pageSize = 3;
         const totalPages = Math.ceil(list.length / pageSize);
-
 
 
         try {
@@ -6660,11 +6634,8 @@
 
 
     function openStats() {
-
         document.querySelectorAll('.stats-main-tab').forEach(t => t.classList.remove('active'));
-
         document.querySelector('.stats-main-tab[data-main="monthly"]').classList.add('active');
-
         document.getElementById('stats-monthly-wrap').style.display = 'block';
 
         document.getElementById('stats-personal-wrap').style.display = 'none';
@@ -6674,13 +6645,19 @@
         renderStats();
 
         document.getElementById('stats-modal').classList.add('show');
-
     }
 
+    function showUpdateNotice() {
+        if (localStorage.getItem(STORAGE_KEY_UPDATE_NOTICE) === APP_VERSION) return;
+        setTimeout(() => document.getElementById('update-modal').classList.add('show'), 350);
+    }
 
+    function confirmUpdateNotice() {
+        localStorage.setItem(STORAGE_KEY_UPDATE_NOTICE, APP_VERSION);
+        document.getElementById('update-modal').classList.remove('show');
+    }
 
     function initEventListeners() {
-
         elDistrict.addEventListener('change', e => {
 
             if (!confirmIfDirty()) {
@@ -6719,8 +6696,6 @@
 
         elType.addEventListener('change', handleMeetingTypeChange);
 
-        document.getElementById('btn-home').addEventListener('click', showAttendancePage);
-
         document.querySelectorAll('.btn-setup').forEach(btn => btn.addEventListener('click', openSetup));
         document.getElementById('btn-template-download').addEventListener('click', downloadMemberTemplate);
         document.getElementById('btn-member-upload').addEventListener('click', () => triggerFilePicker('member-upload-input'));
@@ -6752,7 +6727,7 @@
 
 
         document.querySelector('.btn-stats').addEventListener('click', openStats);
-
+        document.getElementById('btn-update-confirm').addEventListener('click', confirmUpdateNotice);
 
 
         document.querySelectorAll('.stats-tab').forEach(tab => {
@@ -6891,20 +6866,15 @@
 
         previousMeetingType = elType.value;
 
-        document.body.classList.add('attendance-mode');
-
         loadData();
 
         loadWorkingRecord();
 
         renderAttendanceGrid();
-
         initEventListeners();
-
         refreshIcons();
-
+        showUpdateNotice();
     }
-
 
 
     init();
@@ -6914,3 +6884,6 @@
 </body>
 
 </html>
+
+
+
