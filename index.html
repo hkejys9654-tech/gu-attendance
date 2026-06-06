@@ -2613,14 +2613,10 @@
 
 
 
-        .pci-status.start { background: #eaf3ff; color: #0b4fb3; }
-
-        .pci-status.progress { background: #fff4db; color: #a45d00; }
-
-        .pci-status.confirmed { background: #eafaf1; color: #168448; }
-
-        .pci-status.saved { background: #f3edff; color: #7048c8; }
-
+        .pci-status.is-start { background: #eaf3ff; color: #0b4fb3; }
+        .pci-status.is-progress { background: #fff4db; color: #a45d00; }
+        .pci-status.is-confirmed { background: #eafaf1; color: #168448; }
+        .pci-status.is-saved { background: #f3edff; color: #7048c8; }
 
 
         .pci-details {
@@ -5746,21 +5742,13 @@
 
 
     function getPrayerStatusClass(status) {
-
         return {
-
-            시작: 'start',
-
-            진행: 'progress',
-
-            확정: 'confirmed',
-
-            구원: 'saved'
-
+            시작: 'is-start',
+            진행: 'is-progress',
+            확정: 'is-confirmed',
+            구원: 'is-saved'
         }[normalizeNameValue(status)] || '';
-
     }
-
 
 
     function buildPrayerImagePage(items, startIndex, pageIndex, totalPages) {
